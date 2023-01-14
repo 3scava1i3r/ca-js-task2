@@ -82,12 +82,14 @@ function draw () {
   if ((ball_x < brick_x+brick_width) && (ball_x + ball_diameter/2 > brick_x) && (ball_y- ball_diameter/2  < brick_y+brick_height) && (ball_y+ ball_diameter/2  > brick_y)){
     if(((ball_x + ball_diameter/2 - ball_dx <= brick_x))  || (((ball_x - ball_dx >= brick_x+ brick_width)))){
       ball_dx = -ball_dx;
-      remove()
+      
     }
     else {
       ball_dy = -ball_dy;
-      remove();
+
     }
+    brick_height = 0;
+    brick_width = 0;
   }
   
   
