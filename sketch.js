@@ -1,5 +1,7 @@
 let paddle_x, paddle_y, paddle_width, paddle_height, paddle_dx;
 let ball_x, ball_y, ball_diameter, ball_dx, ball_dy;
+let pScore;
+
 function setup() {
   createCanvas(400, 400);
   background("black");
@@ -7,6 +9,7 @@ function setup() {
   paddle_x = (width / 2) - (paddle_width / 2);
   paddle_y = height - 25;
   paddle_height = 15;
+  pScore = 0;
   
  
    ball_diameter = 20;
@@ -23,6 +26,9 @@ function setup() {
   brick_x = (width / 2) - (brick_width / 2);
   brick_height = 10;
   
+  
+  
+  score = createP("Score:").position(0,0).style("font-size:30px")
   
 }
  
@@ -90,8 +96,10 @@ function draw () {
     }
     brick_height = 0;
     brick_width = 0;
+    pScore++;
   }
   
+  score.html("Score: "+ pScore)
   
   
   
